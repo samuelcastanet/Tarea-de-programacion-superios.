@@ -35,7 +35,6 @@ class FileService:
 
     @staticmethod
     def safe_filename(name: str) -> str:
-        # estos caracteres truena en windows
         invalid = '<>:"/\\|?*'
         cleaned = "".join("_" if c in invalid else c for c in name.strip())
         cleaned = cleaned.replace(" ", "_").strip("._")
@@ -54,7 +53,6 @@ class FileService:
 
     @staticmethod
     def save_text_report(report_path: str | Path, graph_data: GraphData, image_path: Path) -> Path:
-        # TODO: algun dia hacer esto en PDF pero por ahora txt esta bien
         report_path = Path(report_path)
         with report_path.open("w", encoding="utf-8") as f:
             f.write("REPORTE DE GRÁFICA\n")
@@ -135,7 +133,6 @@ class PlotService:
         return fig
 
 
-#clase principal, aqui vive todo el infierno de la UI
 class GraphGeneratorApp:
     def __init__(self, root: tk.Tk):
         self.root = root
@@ -166,7 +163,7 @@ class GraphGeneratorApp:
         panel = "#10182c"
         panel2 = "#131d34"
         text = "#f4f4f4"
-        accent = "#d4af37"  # dorado
+        accent = "#d4af37"  
 
         style.configure("TFrame", background=bg)
         style.configure("Panel.TFrame", background=panel)
