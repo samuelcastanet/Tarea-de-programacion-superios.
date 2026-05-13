@@ -35,10 +35,11 @@ class FileService:
 
     @staticmethod
     def safe_filename(name: str) -> str:
+        
         invalid = '<>:"/\\|?*'
         cleaned = "".join("_" if c in invalid else c for c in name.strip())
         cleaned = cleaned.replace(" ", "_").strip("._")
-        return cleaned or "grafica" 
+        return cleaned or "grafica"  
 
     @staticmethod
     def build_paths(directory: str | Path, base_name: str) -> tuple[Path, Path, str]:
@@ -53,6 +54,7 @@ class FileService:
 
     @staticmethod
     def save_text_report(report_path: str | Path, graph_data: GraphData, image_path: Path) -> Path:
+       
         report_path = Path(report_path)
         with report_path.open("w", encoding="utf-8") as f:
             f.write("REPORTE DE GRÁFICA\n")
@@ -132,7 +134,6 @@ class PlotService:
         fig.tight_layout()
         return fig
 
-
 class GraphGeneratorApp:
     def __init__(self, root: tk.Tk):
         self.root = root
@@ -163,7 +164,7 @@ class GraphGeneratorApp:
         panel = "#10182c"
         panel2 = "#131d34"
         text = "#f4f4f4"
-        accent = "#d4af37"  
+        accent = "#d4af37"  # dorado
 
         style.configure("TFrame", background=bg)
         style.configure("Panel.TFrame", background=panel)
@@ -398,7 +399,7 @@ class GraphGeneratorApp:
             if x_data.size == 0:
                 x_data = np.arange(1, y_data.size + 1, dtype=float)
 
-            longeitudd = min(len(x_data), len(y_data)) 
+            longeitudd = min(len(x_data), len(y_data))  
             x_data = x_data[:longeitudd]
             y_data = y_data[:longeitudd]
 
@@ -516,3 +517,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+#no le muevan si le mueven valimos todos https://www.youtube.com/watch?v=UGYny6uI2bA&list=RDUGYny6uI2bA&start_radio=1
