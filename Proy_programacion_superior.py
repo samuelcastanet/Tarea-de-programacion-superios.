@@ -398,7 +398,7 @@ class GraphGeneratorApp:
             if x_data.size == 0:
                 x_data = np.arange(1, y_data.size + 1, dtype=float)
 
-            longeitudd = min(len(x_data), len(y_data))  # longitud, la escribi mal desde el inicio y ya me acostumbre
+            longeitudd = min(len(x_data), len(y_data)) 
             x_data = x_data[:longeitudd]
             y_data = y_data[:longeitudd]
 
