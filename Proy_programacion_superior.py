@@ -38,7 +38,7 @@ class FileService:
         invalid = '<>:"/\\|?*'
         cleaned = "".join("_" if c in invalid else c for c in name.strip())
         cleaned = cleaned.replace(" ", "_").strip("._")
-        return cleaned or "grafica"  # si queda vacio, ponemos algo por default
+        return cleaned or "grafica" 
 
     @staticmethod
     def build_paths(directory: str | Path, base_name: str) -> tuple[Path, Path, str]:
