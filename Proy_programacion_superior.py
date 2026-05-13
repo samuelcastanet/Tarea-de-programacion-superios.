@@ -1,4 +1,4 @@
-# Que el homnisalla nos agarre confesaods
+# Que el homnisalla nos agarre confesaods si esto no funciona el dia de presentacion
 import os
 import json
 import traceback
@@ -220,7 +220,7 @@ class GraphGeneratorApp:
         top = ttk.Frame(self.root)
         top.pack(fill="x", padx=18, pady=(14, 10))
 
-        ttk.Label(top, text="Hamilton Graph Studio", style="Title.TLabel").pack(anchor="w")
+        ttk.Label(top, text="Hamilton Graphicos el mejor economista de USA", style="Title.TLabel").pack(anchor="w")
         ttk.Label(
             top,
             text="Interfaz oscura, rápida y pensada para crear, previsualizar y guardar gráficas sin pasos extra.",
@@ -428,7 +428,7 @@ class GraphGeneratorApp:
         self.preview_ax.set_facecolor("#111831")
         self.preview_ax.text(
             0.5, 0.5,
-            "No hay vista previa disponible",
+            "No hay vista previa disponible valio mauser",
             ha="center", va="center",
             color="#f2f2f2",
             fontsize=12,
@@ -444,9 +444,9 @@ class GraphGeneratorApp:
             data = self.collect_data()
             self.last_data = data
             self._draw_preview(data)
-            self.log(f"Vista previa actualizada ({data.chart_type}).")
+            self.log(f"Vista previa actualizada ({data.chart_type})todo god.")
         except Exception as e:
-            self.log(f"No se pudo actualizar la vista previa: {e}")
+            self.log(f"No se pudo actualizar la vista previa ya valiste madres: {e}")
             self._show_empty_preview()
 
     def _save_worker(self, payload: dict):
@@ -473,12 +473,12 @@ class GraphGeneratorApp:
 
             self.root.after(
                 0,
-                lambda: messagebox.showinfo("Éxito", "La gráfica se generó y guardó correctamente."),
+                lambda: messagebox.showinfo("Éxito", "La gráfica se generó y guardó correctamente a huevo funciono."),
             )
         except Exception:
             err = traceback.format_exc()
-            self._ui_log("ERROR EN GUARDADO:\n" + err)
-            self.root.after(0, lambda: messagebox.showerror("Error", "No se pudo guardar la gráfica."))
+            self._ui_log("ERROR EN GUARDADO PENDEJ:\n" + err)
+            self.root.after(0, lambda: messagebox.showerror("Error", "No se pudo guardar la gráfica que habras echo mia culá no es."))
 
 # quiero dormir pero esta dificil https://www.youtube.com/watch?v=hFpjyBPclAY&list=RDhFpjyBPclAY&start_radio=1
     def generate_graph(self):
@@ -513,7 +513,7 @@ def main():
         app = GraphGeneratorApp(root)
         root.mainloop()
     except Exception as e:
-        print(f"Error fatal: {e}")
+        print(f"Error fatal que isiste esa ni yo me la se o el Benja o el random: {e}")
 
 if __name__ == "__main__":
     main()
